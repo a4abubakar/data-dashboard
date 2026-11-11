@@ -90,3 +90,11 @@ The Playwright config and the screenshot script use `channel: "msedge"` (install
 - Saved views, and a custom comparison period (year over year).
 - Virtualise the table for very large result sets and stream the CSV.
 - Visual regression tests for the charts in both themes.
+
+## Author
+
+**Muhammad Abubaker Siddiq**, Senior Frontend Engineer (React, Next.js, TypeScript)
+
+- GitHub: [@a4abubakar](https://github.com/a4abubakar)
+- Portfolio: https://portfolio-next-six-tau.vercel.app
+- LinkedIn: https://www.linkedin.com/in/muhammad-abubaker-siddiq-27b37615b
