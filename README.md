@@ -12,8 +12,8 @@ Every chart has a text summary and a "View as table" switch:
 
 ![Chart shown as a table](docs/screenshots/chart-as-table.png)
 
-- Live demo: TODO
-- GitHub: TODO
+- Live demo: https://data-dashboard-rose-iota.vercel.app
+- GitHub: https://github.com/a4abubakar/data-dashboard
 
 ## Features
 
