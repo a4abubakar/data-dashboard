@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design tokens. Text pairs are >= 4.5:1 on their surface, chart marks >= 3:1. */
+:root {
+  --background: #f4f6f9;
+  --surface: #ffffff;
+  --surface-muted: #eef1f6;
+  --foreground: #0f172a;
+  --muted: #475569;
+  --border: #d3d9e3;
+  --accent: #1d4ed8;
+  --accent-foreground: #ffffff;
+  --accent-soft: #e3ebff;
+  --ring: #1d4ed8;
+  --good: #047857;
+  --bad: #b91c1c;
+
+  --chart-renewed: #0f766e;
+  --chart-lapsed: #dc2626;
+  --chart-pending: #b45309;
+  --chart-bar: #2563eb;
+  --chart-ch-1: #2563eb;
+  --chart-ch-2: #7c3aed;
+  --chart-ch-3: #0e7490;
+  --chart-ch-4: #64748b;
+  --chart-grid: #e2e7ef;
+  --chart-axis: #475569;
+}
+
+.dark {
+  --background: #0a1020;
+  --surface: #111a2e;
+  --surface-muted: #17233b;
+  --foreground: #e6eaf2;
+  --muted: #a5b1c6;
+  --border: #2a3955;
+  --accent: #7cb0ff;
+  --accent-foreground: #0a1020;
+  --accent-soft: #1b2c52;
+  --ring: #7cb0ff;
+  --good: #34d399;
+  --bad: #fb8c8c;
+
+  --chart-renewed: #2dd4bf;
+  --chart-lapsed: #f87171;
+  --chart-pending: #fbbf24;
+  --chart-bar: #60a5fa;
+  --chart-ch-1: #60a5fa;
+  --chart-ch-2: #a78bfa;
+  --chart-ch-3: #22d3ee;
+  --chart-ch-4: #94a3b8;
+  --chart-grid: #22304a;
+  --chart-axis: #a5b1c6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+  --color-good: var(--good);
+  --color-bad: var(--bad);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respect users who ask for less motion: no pulsing skeletons, no transitions. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Recharts draws its own focus outline on the SVG; the chart is hidden from AT behind a table alternative. */
+.recharts-wrapper:focus,
+.recharts-surface:focus {
+  outline: none;
+}
